@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_04_080812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bank_budgets", force: :cascade do |t|
+    t.string "work_program_group"
+    t.string "work_program"
+    t.string "unit"
+    t.integer "fiscal_year"
+    t.decimal "bank_budget", precision: 14, scale: 4
+    t.decimal "all_funds", precision: 14, scale: 4
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

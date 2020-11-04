@@ -7,7 +7,7 @@ https://nameless-journey-04654.herokuapp.com/
 This is a Ruby on Rails app based on the World Bank Program Budget And All Funds FY15-FY21 found at https://finances.worldbank.org/Budget/World-Bank-Program-Budget-and-All-Funds-FY15-FY21/9g9y-b7rs 
 
 ## Charts
-Echarts are used for generating charts
+ECharts are used for generating charts
 
 ## Move to Postgresql Locally
 While generating JSON the SQL language differences between SQLite3 and Postgresql made it necessary to shift local development to Postgresql. Making changes, and then pushing them to Heroku takes too long (4-5 minutes each cycle due to recompiling of assets), so running Postgresql locally is important.

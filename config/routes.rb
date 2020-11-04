@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :work_program_group
       get :work_show
+      get :trend
     end
   end
 end

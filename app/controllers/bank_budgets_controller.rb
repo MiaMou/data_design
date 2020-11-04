@@ -16,6 +16,35 @@ class BankBudgetsController < ApplicationController
     @bank_budgets = BankBudget.where(work_program_group: params[:work_program_group])
   end
 
+  def trend
+    @unit_arr = []
+    @final_arr = []
+    @budget = []
+    @funds = []
+    BankBudget.all.each do |bank_budget|
+      @unit_arr << bank_budget.unit
+      @budget << bank_budget.bank_budget
+      @funds << bank_budget.all_funds
+    end
+
+    @final_arr = [
+      {
+        name: 'Bank Budget (BB) (US$, Millions)',
+        type: 'line',
+        stack: '总量',
+        areaStyle: {},
+        data: @budget
+      },
+      {
+        name: 'All Funds (US$, Millions)',
+        type: 'line',
+        stack: '总量',
+        areaStyle: {},
+        data: @funds
+      }
+    ].to_json
+  end
+
   # GET /bank_budgets/1
   # GET /bank_budgets/1.json
   def show

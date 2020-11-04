@@ -4,7 +4,16 @@ class BankBudgetsController < ApplicationController
   # GET /bank_budgets
   # GET /bank_budgets.json
   def index
-    @bank_budgets = BankBudget.order(:fiscal_year)
+    @q = BankBudget.ransack(params[:q])
+    @bank_budgets = @q.result.order(:fiscal_year).page(params[:page]).per(10)
+  end
+
+  def work_program_group
+    @bank_budgets = BankBudget.pluck(:work_program_group).uniq
+  end
+
+  def work_show
+    @bank_budgets = BankBudget.where(work_program_group: params[:work_program_group])
   end
 
   # GET /bank_budgets/1

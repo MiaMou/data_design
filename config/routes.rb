@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "bank_budgets#index"
   resources :bank_budgets do
     collection do
-
+      get :work_program_group
+      get :work_show
     end
   end
 end

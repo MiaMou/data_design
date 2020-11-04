@@ -1,36 +1,36 @@
-# README
+# README for the DataDesign > #
+Ruby 2.6.3  Rails  6.0.3.4
+A live version is deployed on Heroku, and can be accessed using the following link:
+https://nameless-journey-04654.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# The bugets and funds of world bank（2015-2021）
+This is a Ruby on Rails app based on the World Bank Program Budget And All Funds FY15-FY21 found at https://finances.worldbank.org/Budget/World-Bank-Program-Budget-and-All-Funds-FY15-FY21/9g9y-b7rs 
 
-Rails 6
-This project is also a chance to explore Rails 6, and it's changes. There will be notes here about what's working and which guides have been useful for me and this project. This will become part of the course I teach on Ruby and Rails at the University of Aberdeen. The practicals and 'deliberate practice' sessions can be found at https://homepages.abdn.ac.uk/b.scharlau/pages/rails-pages/
+## Charts
+Echarts are used for generating charts
 
-These guides to Rails 6 seems to have some useful pointers https://dev.to/vvo/a-rails-6-setup-guide-for-2019-and-2020-hf5 https://medium.com/@adrian_teh/ruby-on-rails-6-with-webpacker-and-bootstrap-step-by-step-guide-41b52ef4081f
-Things you may want to cover:
+### Move to Postgresql Locally
+While generating JSON the SQL language differences between SQLite3 and Postgresql made it necessary to shift local development to Postgresql. Making changes, and then pushing them to Heroku takes too long (4-5 minutes each cycle due to recompiling of assets), so running Postgresql locally is important.
+In order to do this with Postgresql, you need to (a) set up a database to use, (b) assign an 'owner' and password for the database, whose details you put into the config/database.yml file, then you can (c) run your migrations and any rake tasks to seed the database, (d) change the gemfile to use 'pg' gem for development, test, and production and then run 'bundle install'. Now you can start to work with Postgresql locally and remotely. 
 
-* Ruby version
+### Build JSON with Jbuilder
 
-* System dependencies
+## Bootstrap
+We use Bootstrap to clean up the look and feel of the application. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-opera method:
-
+## running the application locally ##
 1. bundle install
 2. rails db:create
 3. rails db:migrate
 4. rails import:data
 5. rails server
+
+Access the application using:http://localhost:3000
+Group Members
+Zhewei Huang (51989960)
+Danping Mou (51989963)
+Yu Xing（51990018）
+
+## These are the parts that are not working correctly ##
+We tried to link map in out application but failed.
+
